@@ -25,6 +25,8 @@ buttonRandom.addEventListener('click', function(){
 });
 
 
+
+
 // Slider Random
 const sliderMerah = document.querySelector('.slider-merah');
 const sliderHijau = document.querySelector('.slider-hijau');
@@ -40,4 +42,15 @@ sliderHijau.addEventListener('input', function(){
 
 sliderBiru.addEventListener('input', function(){
   document.body.style.background = 'radial-gradient(circle, rgba('+ sliderMerah.value +','+ sliderHijau.value +','+ sliderBiru.value +',1) 0%, rgba('+ sliderBiru.value +','+ sliderMerah.value +','+ sliderHijau.value +',1) 100%)';
+})
+
+
+
+
+// Kursor Random
+document.body.addEventListener('mousemove', function(event){
+  const xPos = Math.round((event.clientX / window.innerWidth) * 255);
+  const yPos = Math.round((event.clientY / window.innerHeight) * 255);
+
+  document.body.style.background = 'radial-gradient(circle, rgba('+ xPos +','+ 100 +','+ yPos +',1) 0%, rgba('+ yPos +','+ xPos +','+ 100 +',1) 100%)';
 })
